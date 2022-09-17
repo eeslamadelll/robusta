@@ -53,7 +53,9 @@ function todosReducer(state: Todo[], action: TodoAction) {
 }
 
 function TodosProvider({ children }: TodosProviderProps) {
-  const todosfromLocalStorage = JSON.parse(localStorage.getItem('todos') || '');
+  const todosfromLocalStorage = JSON.parse(
+    localStorage.getItem('todos') || '[]'
+  );
   const [state, dispatch] = useReducer(
     todosReducer,
     todosfromLocalStorage || []
