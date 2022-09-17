@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ListTodos } from '@/app/components/ListTodos';
 import { Heading } from '@/app/components/atoms/Heading';
+import { Button } from '@/app/components/atoms/Button';
 
 const StyledApp = styled.div`
   margin: 20px auto;
@@ -12,13 +13,14 @@ const StyledApp = styled.div`
   overflow: auto;
 `;
 
-export function App() {
+export function AllTodos() {
   return (
     <StyledApp>
       <Heading as="h1">Tasks</Heading>
       <ListTodos />
+      <Button action="+" location="/add-todo" />
     </StyledApp>
   );
 }
 
-export default App;
+export default AllTodos;

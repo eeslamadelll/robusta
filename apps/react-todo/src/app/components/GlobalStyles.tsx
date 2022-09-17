@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --color-primary: #2698F7;
     --color-white: #fff;
     --color-check-empty: #ECEFF1;
+    --color-placeholder: #8F9CA3;
     // sizes
     --container-width: 70%;
     margin: 0;
