@@ -2,8 +2,6 @@ import styled from 'styled-components';
 
 export const ListWrapper = styled.ul`
   padding: 0;
-  height: 80%;
-  overflow: scroll;
 `;
 
 export const ListItem = styled.li`

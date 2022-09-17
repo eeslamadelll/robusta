@@ -10,6 +10,9 @@ const StyledApp = styled.div`
   padding: 20px;
   position: relative;
   overflow: auto;
+  @media (max-width: 500px) {
+    height: calc(75vh);
+  }
 `;
 
 export function AddTodo() {

@@ -7,10 +7,13 @@ const StyledApp = styled.div`
   margin: auto;
   width: var(--container-width);
   background: var(--color-white);
-  height: calc(100vh - 80px);
+  max-height: calc(100vh - 80px);
   padding: 20px;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  @media (max-width: 500px) {
+    height: calc(75vh);
+  }
 `;
 
 export function AllTodos() {
