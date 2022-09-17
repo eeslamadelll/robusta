@@ -1,7 +1,7 @@
 import { StrictMode } from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { TodosContext, todos } from './app/context/todos-context';
+import { TodosProvider } from './app/context/todos-context';
 
 import { GlobalStyle } from '@/app/components/GlobalStyles';
 
@@ -26,9 +26,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <TodosContext.Provider value={todos}>
+    <TodosProvider>
       <GlobalStyle />
       <RouterProvider router={router} />
-    </TodosContext.Provider>
+    </TodosProvider>
   </StrictMode>
 );

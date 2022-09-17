@@ -4,12 +4,13 @@ import * as Styled from './styles';
 type ButtonProps = {
   action: string;
   location: string;
+  onClick?: any;
 };
 
-export const Button = ({ action, location }: ButtonProps) => {
+export const Button = ({ action, location, onClick }: ButtonProps) => {
   return (
     <Link to={location}>
-      <Styled.Button>{action}</Styled.Button>
+      <Styled.Button onClick={onClick}>{action}</Styled.Button>
     </Link>
   );
 };
