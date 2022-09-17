@@ -1,7 +1,7 @@
-import { useContext } from 'react';
-import { TodosContext } from '@/app/context/todos-context';
+import { useTodos } from '@/app/context/todos-context';
 
 export const useTodoList = () => {
-  const todos = useContext(TodosContext);
-  return { todos };
+  const { state: todos } = useTodos();
+  const isEmpty = todos.length === 0;
+  return { todos, isEmpty };
 };

@@ -5,8 +5,13 @@ export const Button = styled.button`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  width: 65px;
-  height: 65px;
+  width: 0px;
+  height: 0px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   border-radius: 50%;
   color: var(--color-white);
