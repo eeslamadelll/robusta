@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     // sizes
     --container-width: 70%;
     margin: 0;
-    padding: 0;
+    padding: 20px 0;
     height: 100vh;
     width: 100vw;
     box-sizing: border-box;
