@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   background-color: var(--color-primary);
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  position: fixed;
+  bottom: 40px;
+  right: 15vw;
   width: 0px;
   height: 0px;
   padding: 30px;
@@ -18,4 +18,7 @@ export const Button = styled.button`
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
   cursor: pointer;
   font-size: 2rem;
+  @media (max-width: 500px) {
+    bottom: calc(40px + 15vh);
+  }
 `;
