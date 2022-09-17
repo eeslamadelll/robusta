@@ -2,9 +2,11 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
   background-color: var(--color-primary);
-  position: fixed;
-  bottom: 60px;
-  right: calc(100% - 84%);
+  position: absolute;
+  // bottom: 60px;
+  // right: calc(100% - 84%);
+  bottom: 20px;
+  right: 20px;
   width: 65px;
   height: 65px;
   border: none;

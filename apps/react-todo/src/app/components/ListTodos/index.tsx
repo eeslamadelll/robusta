@@ -8,7 +8,7 @@ export const ListTodos = () => {
     <Styled.ListWrapper>
       {todos.map((todo) => {
         return (
-          <Styled.ListItem>
+          <Styled.ListItem key={todo.id}>
             <CheckBox {...todo} />
           </Styled.ListItem>
         );
