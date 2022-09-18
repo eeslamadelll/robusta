@@ -27,6 +27,9 @@ export const GlobalStyle = createGlobalStyle`
       var(--gradient-start) 0%,
       var(--gradient-end) 100%
     );
+    @media (max-width: 500px) {
+      padding: 0;
+    }
   }
   [type="checkbox"],
   [type="radio"] {
