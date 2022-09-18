@@ -4,7 +4,7 @@ const textInputPlaceholderCommonStyles = css`
   color: var(--color-placeholder);
 `;
 
-export const TextInput = styled.textarea`
+export const TextInput = styled.input`
   width: 100%;
   padding-bottom: 300px;
   padding-top: 20px;

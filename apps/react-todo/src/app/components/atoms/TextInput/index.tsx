@@ -1,9 +1,9 @@
 import { forwardRef } from 'react';
 import * as Styled from './styles';
 
-type TextInputProps = React.ComponentPropsWithoutRef<'textarea'>;
+type TextInputProps = React.ComponentPropsWithoutRef<'input'>;
 
-export const TextInput = forwardRef<HTMLTextAreaElement, TextInputProps>(
+export const TextInput = forwardRef<HTMLInputElement, TextInputProps>(
   (props, ref) => {
     return (
       <Styled.TextInput
