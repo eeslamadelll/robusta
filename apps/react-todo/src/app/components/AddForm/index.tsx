@@ -1,18 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { useRef, useState } from 'react';
 import { TextInput } from '@/app/components/atoms/TextInput';
 import { Heading } from '@/app/components/atoms/Heading';
 import * as Styled from './styles';
 import { Button } from '@/app/components/atoms/Button';
-import { useTodos } from '@/app/context/todos-context';
+import useFormHook from './useFormHook';
 
 type FormProps = {};
 
 export const AddForm = ({}: FormProps) => {
-  const navigate = useNavigate();
-  const ref = useRef<HTMLTextAreaElement>(null);
-  const [todoValue, setTodoValue] = useState<string | undefined>('');
-  const { dispatch } = useTodos();
+  const { ref, handleInputChange, handleAddTodo } = useFormHook();
 
   return (
     <Styled.FormContainer>
@@ -20,23 +15,10 @@ export const AddForm = ({}: FormProps) => {
         <Heading as="h1">Create New Task</Heading>
         <TextInput
           ref={ref}
-          onChange={(val) => {
-            setTodoValue(ref.current?.value);
-          }}
+          onChange={handleInputChange}
+          onSubmit={handleAddTodo}
         />
-        <Button
-          action="✓"
-          location=""
-          onClick={(e: any) => {
-            e.preventDefault();
-            if (!todoValue) {
-              alert('Please enter a task');
-              return;
-            }
-            dispatch({ type: 'add_todo', title: String(todoValue) });
-            navigate('/');
-          }}
-        />
+        <Button action="✓" location="" onClick={handleAddTodo} />
       </Styled.FormContent>
     </Styled.FormContainer>
   );

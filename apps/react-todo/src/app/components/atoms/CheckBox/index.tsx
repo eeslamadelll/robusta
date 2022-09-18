@@ -1,5 +1,6 @@
 import { useTodos } from '@/app/context/todos-context';
 import * as Styled from './styles';
+import useCheckboxHook from './useCheckboxHook';
 
 type CheckboxProp = {
   id: string;
@@ -8,8 +9,8 @@ type CheckboxProp = {
 };
 
 export const CheckBox = ({ id, title, completed }: CheckboxProp) => {
-  const markLength = 15.749618530273438;
-  const { dispatch } = useTodos();
+  const { markLength, handleCheckboxChange } = useCheckboxHook({ id });
+
   return (
     <Styled.CheckBoxLabel htmlFor={id}>
       <Styled.CheckBox
@@ -17,13 +18,7 @@ export const CheckBox = ({ id, title, completed }: CheckboxProp) => {
         id={id}
         defaultChecked={completed}
         value={title}
-        onChange={(e) => {
-          dispatch({
-            type: 'complete_todo',
-            id,
-            completed: e.target.checked,
-          });
-        }}
+        onChange={handleCheckboxChange}
       />
       <Styled.CheckBoxIndicator viewBox="0 0 16 16">
         <Styled.CheckBoxCircleBG />
